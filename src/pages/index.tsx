@@ -1,9 +1,10 @@
-import * as S from '../styles/pages/index'
+import * as S from '../styles/pages/index';
 
 import {
   SEO,
   InputSearch,
-} from '../components'
+  EstablishmentCard,
+} from '../components';
 
 export default function Home() {
   return (
@@ -17,6 +18,21 @@ export default function Home() {
         <S.Title>Bem-vindo ao Lista Rango</S.Title>
 
         <InputSearch />
+
+        <S.WrapperContent>
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+          <EstablishmentCard />
+        </S.WrapperContent>
       </S.Wrapper>
     </S.Container>
   )

@@ -27,3 +27,12 @@ export const Title = styled.h1`
   font-weight: 300;
   font-size: 1.5rem;
 `;
+
+export const WrapperContent = styled.section`
+  width: 100%;
+  padding: 2.87rem 5.8125rem 0 5.8125rem;
+
+  display: grid;
+  gap: 2.56rem 3rem;
+  grid-template-columns: repeat(3, 1fr);
+`;

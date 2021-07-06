@@ -1,10 +1,10 @@
-import * as S from './styles'
+import * as S from './styles';
 
 export function Header() {
   return (
     <S.Container>
       <S.Wrapper>
-        {/* escalabildiade */}
+        {/* scalability */}
       </S.Wrapper>
     </S.Container>
   )

@@ -1,6 +1,6 @@
-import { FaSearch } from 'react-icons/fa'
+import { FaSearch } from 'react-icons/fa';
 
-import * as S from './styles'
+import * as S from './styles';
 
 export function InputSearch() {
   return (

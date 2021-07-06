@@ -34,8 +34,14 @@ export const Container = styled.div`
     background: transparent;
 
     svg{
+      transition: 0.2s;
       color: ${colors.black};
     }
+
+    :hover svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
   }
 `;
 
