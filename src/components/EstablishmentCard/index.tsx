@@ -1,3 +1,7 @@
+import Image from 'next/image'
+
+import natureImg from '../../../public/png/nature.png';
+
 import * as S from './styles';
 
 interface EstablishmentCardProps {
@@ -11,7 +15,7 @@ export function EstablishmentCard({ isOpen, StablishmentName, StablishmentAddres
   return (
     <S.Container>
       <S.ContentLeft>
-        {StablishmentImage || <img src="/png/nature.png" alt="Nature Food" />}
+        {StablishmentImage || <Image src={natureImg} alt="Image default" />}
       </S.ContentLeft>
 
       <S.ContentRight>
