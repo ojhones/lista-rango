@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import colors from '../colors';
+
 export const Container = styled.main`
   width: 100vw;
   min-height: calc(100vh - 3.875rem);
@@ -26,11 +28,12 @@ export const Title = styled.h1`
 
   font-weight: 300;
   font-size: 1.5rem;
+  color: ${colors.black};
 `;
 
 export const WrapperContent = styled.section`
   width: 100%;
-  padding: 2.87rem 5.8125rem 0 5.8125rem;
+  padding: 2.87rem 5.8125rem 0.5rem 5.8125rem;
 
   display: grid;
   gap: 2.56rem 3rem;
