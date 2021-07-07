@@ -1,21 +1,37 @@
 import * as S from './styles';
 
-export function EstablishmentCard() {
+interface EstablishmentCardProps {
+  isOpen: boolean,
+  StablishmentName: string,
+  StablishmentAddress: string,
+  StablishmentImage?: string,
+}
+
+export function EstablishmentCard({ isOpen, StablishmentName, StablishmentAddress, StablishmentImage }: EstablishmentCardProps) {
   return (
     <S.Container>
       <S.ContentLeft>
-        <img src="/png/nature.png" alt="Nature Food" />
+        {StablishmentImage || <img src="/png/nature.png" alt="Nature Food" />}
       </S.ContentLeft>
 
       <S.ContentRight>
-        <S.StablishmentTitle>
-          Nome do Restaurante
-        </S.StablishmentTitle>
+        <S.StablishmentName>
+          {StablishmentName}
+        </S.StablishmentName>
 
         <S.StablishmentAddress>
-          Endereço do restaurante
+          {StablishmentAddress}
         </S.StablishmentAddress>
       </S.ContentRight>
-    </S.Container>
+
+
+      <S.IndicatorOpen isOpen={isOpen}>
+        {isOpen ? (
+          <p>Aberto agora</p>
+        ) : (
+          <p>Feachado</p>
+        )}
+      </S.IndicatorOpen>
+    </S.Container >
   )
 }

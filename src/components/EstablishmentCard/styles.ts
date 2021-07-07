@@ -2,7 +2,13 @@ import styled from 'styled-components';
 
 import colors from '../../styles/colors';
 
+interface IndicatorProps {
+  isOpen: boolean;
+}
+
 export const Container = styled.div`
+  position: relative;
+
   width: 100%;
   height: 6.25rem;
   max-width: 22.9375;
@@ -31,7 +37,7 @@ export const ContentRight = styled.div`
   padding: 2rem 1.65rem;
 `
 
-export const StablishmentTitle = styled.h3`
+export const StablishmentName = styled.h3`
   font-size: 1rem;
   text-align: left;
   letter-spacing: 0px;
@@ -44,3 +50,51 @@ export const StablishmentAddress = styled.p`
   letter-spacing: 0px;
   color: ${colors.black};
 `
+
+export const IndicatorOpen = styled.span<IndicatorProps>`
+  top: -1rem;
+  right: -1rem;
+  position: absolute;
+
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${colors.purple800};
+  opacity: ${({isOpen}) => isOpen ? 1 : 0.5};
+
+  p{
+    text-align: center;
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: ${colors.white};
+  }
+`;
+
+
+// export const IsClosed = styled.span`
+//   top: -1rem;
+//   right: -1rem;
+//   position: absolute;
+
+//   width: 3rem;
+//   height: 3rem;
+//   border-radius: 50%;
+
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   opacity: 0.5;
+//   background: ${colors.purple800};
+
+//   p{
+//     text-align: center;
+//     font-size: 0.5rem;
+//     font-weight: bold;
+//     color: ${colors.white};
+//   }
+// `;

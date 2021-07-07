@@ -1,5 +1,7 @@
 import * as S from '../styles/pages/index';
 
+import { data } from '../components/EstablishmentCard/data'
+
 import {
   SEO,
   InputSearch,
@@ -20,18 +22,14 @@ export default function Home() {
         <InputSearch />
 
         <S.WrapperContent>
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
-          <EstablishmentCard />
+          {data.map(item => (
+            <EstablishmentCard
+              key={item.id}
+              isOpen={item.isOpen}
+              StablishmentName='Nome do Restaurante'
+              StablishmentAddress="Endereço do restaurante"
+            />
+          ))}
         </S.WrapperContent>
       </S.Wrapper>
     </S.Container>
