@@ -31,9 +31,7 @@ export default function Menu() {
           <InputSearch />
         </S.ContentLeft>
 
-        <S.ContentRight>
-
-        </S.ContentRight>
+        <S.ContentRight />
 
       </S.Wrapper>
     </S.Container>
