@@ -4,6 +4,7 @@ import colors from '../../styles/colors'
 
 export const Container = styled.div`
     width: 100%;
+    padding-bottom: 1rem;
 
     display: flex;
     align-items: center;
@@ -34,14 +35,14 @@ export const ContentTop = styled.div`
 `;
 
 export const ContentLeft = styled.div`
-  padding-right: 8.37rem;
+  /* padding-right: 6.37rem; */
  
   grid-area: left;
 `;
 
 export const ContentRight = styled.div`
+  min-height: 43rem;
   border-radius: 4px;
-  min-height: 47.81rem;
 
   grid-area: right;
 

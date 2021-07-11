@@ -7,7 +7,7 @@ import * as S from './styles';
 
 interface EstablishmentCardProps {
   isOpen: boolean,
-  slug: String | number,
+  slug: String,
   establishmentName?: string,
   establishmentImage?: string,
   establishmentAddress?: string,

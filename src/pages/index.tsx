@@ -28,8 +28,8 @@ export default function Home() {
         <S.WrapperContent>
           {data.map(item => (
             <EstablishmentCard
-              slug="restaurante"
               key={item.id}
+              slug="restaurante"
               isOpen={item.isOpen}
               establishmentName='Nome do Restaurante'
               establishmentAddress="Endereço do restaurante"

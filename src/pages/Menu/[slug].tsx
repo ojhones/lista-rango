@@ -3,6 +3,8 @@ import * as S from './styles'
 import {
   SEO,
   Header,
+  InputSearch,
+  EstablishmentDetail,
 } from '../../components'
 
 export default function Menu() {
@@ -19,11 +21,11 @@ export default function Menu() {
         />
 
         <S.ContentTop>
-       
+          <EstablishmentDetail />
         </S.ContentTop>
 
         <S.ContentLeft>
-          
+          <InputSearch />
         </S.ContentLeft>
 
         <S.ContentRight>
