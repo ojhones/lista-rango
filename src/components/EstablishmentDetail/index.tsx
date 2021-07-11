@@ -3,21 +3,30 @@ import Image from 'next/image'
 import natureImg from '../../../public/png/nature.png';
 
 import * as S from "./styles"
+interface EstablishmentDetailProps {
+  establishmentName: string,
+  establishmentImage?: string | any, 
+  establishmentDescription: string,
+}
 
-export function EstablishmentDetail() {
+export function EstablishmentDetail({
+    establishmentName,
+    establishmentImage,
+    establishmentDescription,
+  }:EstablishmentDetailProps) {
+
   return(
     <S.Container>
 
       <S.ContentLeft>
-        <Image src={natureImg} alt="Image default" />
+        <Image src={establishmentImage ||natureImg} alt={establishmentName || 'Default image'} /> 
       </S.ContentLeft>
 
       <S.ContentRight>
-        <h1>Nome do restaurante</h1>
+        <h1>{establishmentName}</h1>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {establishmentDescription}
         </p>
 
         <span>Segunda a Sexta: <strong>11:30 às 15:00</strong></span>
