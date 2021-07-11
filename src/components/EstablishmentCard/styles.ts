@@ -24,7 +24,7 @@ export const Container = styled.a`
   :hover {
     cursor: pointer;
     
-    transform: scaleY(10px);
+    transform: translateY(-0.35rem);
   }
 `;
 
