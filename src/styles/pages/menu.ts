@@ -23,7 +23,6 @@ export const Wrapper = styled.div`
                        "left left left right"
                        "left left left right"
                        "left left left right";
-
 `;
 
 export const ContentTop = styled.div`
