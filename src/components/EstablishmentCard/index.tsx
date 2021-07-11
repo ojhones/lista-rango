@@ -6,26 +6,26 @@ import * as S from './styles';
 
 interface EstablishmentCardProps {
   isOpen: boolean,
-  StablishmentName: string,
-  StablishmentAddress: string,
-  StablishmentImage?: string,
+  EstablishmentName: string,
+  EstablishmentAddress: string,
+  EstablishmentImage?: string,
 }
 
-export function EstablishmentCard({ isOpen, StablishmentName, StablishmentAddress, StablishmentImage }: EstablishmentCardProps) {
+export function EstablishmentCard({ isOpen, EstablishmentName, EstablishmentAddress, EstablishmentImage }: EstablishmentCardProps) {
   return (
     <S.Container>
       <S.ContentLeft>
-        {StablishmentImage || <Image src={natureImg} alt="Image default" />}
+        {EstablishmentImage || <Image src={natureImg} alt="Image default" />}
       </S.ContentLeft>
 
       <S.ContentRight>
-        <S.StablishmentName>
-          {StablishmentName}
-        </S.StablishmentName>
+        <S.EstablishmentName>
+          {EstablishmentName}
+        </S.EstablishmentName>
 
-        <S.StablishmentAddress>
-          {StablishmentAddress}
-        </S.StablishmentAddress>
+        <S.EstablishmentAddress>
+          {EstablishmentAddress}
+        </S.EstablishmentAddress>
       </S.ContentRight>
 
 
@@ -33,7 +33,7 @@ export function EstablishmentCard({ isOpen, StablishmentName, StablishmentAddres
         {isOpen ? (
           <p>Aberto agora</p>
         ) : (
-          <p>Feachado</p>
+          <p>Fechado</p>
         )}
       </S.IndicatorOpen>
     </S.Container >

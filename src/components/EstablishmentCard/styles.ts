@@ -37,14 +37,14 @@ export const ContentRight = styled.div`
   padding: 2rem 1.65rem;
 `
 
-export const StablishmentName = styled.h3`
+export const EstablishmentName = styled.h3`
   font-size: 1rem;
   text-align: left;
   letter-spacing: 0px;
   color: ${colors.black};
 `
 
-export const StablishmentAddress = styled.p`
+export const EstablishmentAddress = styled.p`
   font-size: 0.75rem;
   text-align: left;
   letter-spacing: 0px;
