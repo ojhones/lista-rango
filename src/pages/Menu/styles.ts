@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import colors from '../../styles/colors'
+
 export const Container = styled.div`
     width: 100%;
 
@@ -12,7 +14,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1366px;
-
+  padding: 0 4.62rem;
   min-height: calc(100vh -3.6rem);
 
   display: grid;
@@ -24,25 +26,24 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentTop = styled.div`
-  width: 100%;
-  min-height: 10.5625rem;
-  padding: 2.18rem 1rem 0.62rem 1rem;
+  min-height: 11.56rem;
 
+  display: flex;
   grid-area: top;
+  align-items: center;
 `;
 
 export const ContentLeft = styled.div`
-  padding: 1rem 8.37rem 1rem 1rem;
-
+  padding-right: 8.37rem;
+ 
   grid-area: left;
-
-  background: red;
 `;
 
 export const ContentRight = styled.div`
-  padding: 1rem;
+  border-radius: 4px;
+  min-height: 47.81rem;
 
   grid-area: right;
 
-  background: gray;
+  background: ${colors.gray300};
 `;

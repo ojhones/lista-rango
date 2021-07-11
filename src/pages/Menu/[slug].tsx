@@ -3,10 +3,9 @@ import * as S from './styles'
 import {
   SEO,
   Header,
-
 } from '../../components'
 
-export default function Products() {
+export default function Menu() {
   return (
     <S.Container>
       
@@ -15,20 +14,20 @@ export default function Products() {
       <S.Wrapper>
 
         <SEO 
-          title="Produtos" 
-          description="Escolha o produto que quiser do restaurante que você escolheu :)"
+          title="Menu" 
+          description="Escolha escolha seu prato! :)"
         />
 
         <S.ContentTop>
-          <p>oi</p>
+       
         </S.ContentTop>
 
         <S.ContentLeft>
-          <p>oi</p>
+          
         </S.ContentLeft>
 
         <S.ContentRight>
-          <p>oi</p>
+
         </S.ContentRight>
 
       </S.Wrapper>

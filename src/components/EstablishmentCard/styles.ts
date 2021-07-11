@@ -6,7 +6,7 @@ interface IndicatorProps {
   isOpen: boolean;
 }
 
-export const Container = styled.div`
+export const Container = styled.a`
   position: relative;
 
   width: 100%;
@@ -18,6 +18,14 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: transform .2s;
+
+  :hover {
+    cursor: pointer;
+    
+    transform: scaleY(10px);
+  }
 `;
 
 export const ContentLeft = styled.div`
@@ -35,21 +43,22 @@ export const ContentLeft = styled.div`
 export const ContentRight = styled.div`
   flex: 1;
   padding: 2rem 1.65rem;
+
+  h3 {
+    font-size: 1rem;
+    text-align: left;
+    letter-spacing: 0px;
+    color: ${colors.black};
+  }
+
+  p {
+    font-size: 0.75rem;
+    text-align: left;
+    letter-spacing: 0px;
+    color: ${colors.black};
+  }
 `
 
-export const EstablishmentName = styled.h3`
-  font-size: 1rem;
-  text-align: left;
-  letter-spacing: 0px;
-  color: ${colors.black};
-`
-
-export const EstablishmentAddress = styled.p`
-  font-size: 0.75rem;
-  text-align: left;
-  letter-spacing: 0px;
-  color: ${colors.black};
-`
 
 export const IndicatorOpen = styled.span<IndicatorProps>`
   top: -1rem;
@@ -74,27 +83,3 @@ export const IndicatorOpen = styled.span<IndicatorProps>`
   }
 `;
 
-
-// export const IsClosed = styled.span`
-//   top: -1rem;
-//   right: -1rem;
-//   position: absolute;
-
-//   width: 3rem;
-//   height: 3rem;
-//   border-radius: 50%;
-
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   opacity: 0.5;
-//   background: ${colors.purple800};
-
-//   p{
-//     text-align: center;
-//     font-size: 0.5rem;
-//     font-weight: bold;
-//     color: ${colors.white};
-//   }
-// `;
