@@ -12,10 +12,10 @@ import {
 export default function Home() {
   return (
     <S.Container>
-      <S.Wrapper>
-        
-        <Header />
 
+      <Header />
+
+      <S.Wrapper>
         <SEO
           title="Lista Rango"
           description="Bem vindo à página inicial do lista Rango!"
@@ -35,6 +35,7 @@ export default function Home() {
             />
           ))}
         </S.WrapperContent>
+
       </S.Wrapper>
     </S.Container>
   )
