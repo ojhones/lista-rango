@@ -3,9 +3,9 @@ import * as S from './styles'
 import {
   Accordion,
   AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
   AccordionItemPanel,
+  AccordionItemButton,
+  AccordionItemHeading,
 } from 'react-accessible-accordion';
 
 

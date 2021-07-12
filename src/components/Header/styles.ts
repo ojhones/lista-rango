@@ -16,6 +16,17 @@ export const Container = styled.header`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1366px;
+  padding: 0 1rem;
   height: 3.6rem;
+  max-width: 1366px;
+
+  display: flex;
+  align-items: center;
+
+
+  a{
+    svg{
+      color: ${colors.white};
+    }
+  }
 `;

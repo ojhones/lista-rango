@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <S.Container>
 
-      <Header />
+      <Header isLink/>
 
       <S.Wrapper>
         <SEO
