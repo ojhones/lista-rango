@@ -75,7 +75,7 @@ export const IndicatorOpen = styled.span<IndicatorProps>`
   background: ${colors.purple800};
   opacity: ${({isOpen}) => isOpen ? 1 : 0.5};
 
-  @media(max-width: 768px) {
+  @media(max-width: 767px) {
     top: 1.5rem;
     right: 1rem;
   }
