@@ -6,8 +6,8 @@ import natureImg from '../../../public/png/nature.png';
 import * as S from './styles';
 
 interface EstablishmentCardProps {
-  isOpen: boolean,
   slug: String,
+  isOpen: boolean,
   establishmentName?: string,
   establishmentImage?: string,
   establishmentAddress?: string,

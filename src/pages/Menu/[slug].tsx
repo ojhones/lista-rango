@@ -4,6 +4,7 @@ import {
   SEO,
   Header,
   InputSearch,
+  AccordionProducts,
   EstablishmentDetail,
 } from '../../components'
 
@@ -29,6 +30,8 @@ export default function Menu() {
 
         <S.ContentLeft>
           <InputSearch />
+
+          <AccordionProducts />
         </S.ContentLeft>
 
         <S.ContentRight />

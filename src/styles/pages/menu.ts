@@ -34,12 +34,13 @@ export const ContentTop = styled.div`
 `;
 
 export const ContentLeft = styled.div`
-  /* padding-right: 6.37rem; */
+  max-width:936px;
  
   grid-area: left;
 `;
 
 export const ContentRight = styled.div`
+  min-width: 282px;
   min-height: 43rem;
   border-radius: 4px;
 
