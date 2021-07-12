@@ -51,7 +51,7 @@ export const Container = styled.div`
     display: inline-block;
 
     content: "";
-    float: right;
+    float: right; // it just worked like that
     transform: rotate(-45deg);
   }
   
