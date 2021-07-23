@@ -20,6 +20,10 @@ export const Container = styled.div`
     border: none;
     border-radius: 2px;
     border-bottom: 1px solid ${colors.gray300};
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   .accordion__item {

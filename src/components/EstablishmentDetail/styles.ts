@@ -5,6 +5,10 @@ import colors from '../../styles/colors';
 export const Container = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContentLeft = styled.div`
@@ -16,6 +20,10 @@ export const ContentLeft = styled.div`
     height: auto;
 
     object-fit: contain;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 1rem;
   }
 `;
 
@@ -51,5 +59,9 @@ export const ContentRight = styled.div`
     letter-spacing: 0px;
     color: ${colors.black};
     font-family: 'Montserrat';
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 1.5rem;
   }
 `;

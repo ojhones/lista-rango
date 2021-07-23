@@ -9,8 +9,8 @@ interface EstablishmentCardProps {
   slug: String;
   isOpen: boolean;
   establishmentName?: string;
-  establishmentImage?: string;
   establishmentAddress?: string;
+  establishmentImage?: string | any;
 }
 
 export function EstablishmentCard({
@@ -24,7 +24,7 @@ export function EstablishmentCard({
     <Link href={`/Menu/${slug}`} passHref>
       <S.Container>
         <S.ContentLeft>
-          {establishmentImage || <Image src={natureImg} alt="Image default" />}
+          <Image src={establishmentImage || natureImg} alt="Image default" />
         </S.ContentLeft>
 
         <S.ContentRight>

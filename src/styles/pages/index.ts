@@ -4,6 +4,7 @@ import colors from '../colors';
 
 export const Container = styled.main`
   width: 100vw;
+  padding: 0 1rem;
   min-height: calc(100vh - 3.875rem);
 
   display: flex;
@@ -46,8 +47,8 @@ export const WrapperContent = styled.section`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 760px) {
-    padding: 2.87rem 1.8125rem 0.5rem 1.8125rem;
+  @media (max-width: 767px) {
+    padding: 2.87rem 0.7125rem 0.5rem 0.7125rem;
   }
 
   @media (max-width: 549px) {

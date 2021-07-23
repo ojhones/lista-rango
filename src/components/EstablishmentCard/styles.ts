@@ -11,7 +11,7 @@ export const Container = styled.a`
 
   width: 100%;
   height: 6.25rem;
-  max-width: 22.9375;
+  max-width: 22.9375rem;
   border-radius: 4px;
   box-shadow: 0px 2px 4px ${colors.gray300};
 
@@ -73,11 +73,6 @@ export const IndicatorOpen = styled.span<IndicatorProps>`
   justify-content: center;
   background: ${colors.purple800};
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0.5)};
-
-  @media (max-width: 767px) {
-    top: 1.5rem;
-    right: 1rem;
-  }
 
   p {
     text-align: center;

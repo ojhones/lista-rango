@@ -24,6 +24,16 @@ export const Wrapper = styled.div`
     'left left left right'
     'left left left right'
     'left left left right';
+
+  @media (max-width: 767px) {
+    padding: 0 2rem;
+
+    grid-template-areas:
+      'top  top  top  top'
+      'left left left left'
+      'left left left left'
+      'left left left left';
+  }
 `;
 
 export const ContentTop = styled.div`
@@ -48,4 +58,8 @@ export const ContentRight = styled.div`
   grid-area: right;
 
   background: ${colors.gray300};
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
