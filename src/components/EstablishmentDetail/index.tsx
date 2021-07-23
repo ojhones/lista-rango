@@ -3,6 +3,7 @@ import Image from 'next/image';
 import natureImg from '../../../public/png/nature.png';
 
 import * as S from './styles';
+
 interface EstablishmentDetailProps {
   establishmentName: string;
   establishmentDescription: string;

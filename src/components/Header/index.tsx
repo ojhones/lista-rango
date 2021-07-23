@@ -14,9 +14,7 @@ export function Header({ isLink }: HeaderProps) {
       <S.Wrapper>
         {isLink ?? (
           <Link href="/">
-            <a>
-              <AiOutlineArrowLeft size={25} />
-            </a>
+            <AiOutlineArrowLeft size={25} />
           </Link>
         )}
       </S.Wrapper>

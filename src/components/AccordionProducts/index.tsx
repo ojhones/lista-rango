@@ -1,5 +1,3 @@
-import * as S from './styles';
-
 import {
   Accordion,
   AccordionItem,
@@ -8,10 +6,12 @@ import {
   AccordionItemHeading,
 } from 'react-accessible-accordion';
 
+import * as S from './styles';
+
 export function AccordionProducts() {
   return (
     <S.Container>
-      <Accordion allowZeroExpanded={true} allowMultipleExpanded={true}>
+      <Accordion allowZeroExpanded allowMultipleExpanded>
         <AccordionItem>
           <AccordionItemHeading>
             <AccordionItemButton>
