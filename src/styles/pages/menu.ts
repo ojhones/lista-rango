@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import colors from '../../styles/colors'
+import colors from '../../styles/colors';
 
 export const Container = styled.div`
-    width: 100%;
-    padding-bottom: 1rem;
+  width: 100%;
+  padding-bottom: 1rem;
 
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const Wrapper = styled.div`
@@ -19,10 +19,11 @@ export const Wrapper = styled.div`
   min-height: calc(100vh -3.6rem);
 
   display: grid;
-  grid-template-areas: "top  top  top  top"
-                       "left left left right"
-                       "left left left right"
-                       "left left left right";
+  grid-template-areas:
+    'top  top  top  top'
+    'left left left right'
+    'left left left right'
+    'left left left right';
 `;
 
 export const ContentTop = styled.div`
@@ -34,8 +35,8 @@ export const ContentTop = styled.div`
 `;
 
 export const ContentLeft = styled.div`
-  max-width:936px;
- 
+  max-width: 936px;
+
   grid-area: left;
 `;
 

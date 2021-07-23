@@ -23,8 +23,7 @@ const SEO: FC<SEOProps> = ({
   altImage,
   shouldIndexPage = true,
 }) => {
-  const pageImage =
-    image || 'images/mao.jpg';
+  const pageImage = image || 'images/mao.jpg';
 
   return (
     <Head>

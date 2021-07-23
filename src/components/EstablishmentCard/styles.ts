@@ -19,11 +19,11 @@ export const Container = styled.a`
   align-items: center;
   justify-content: center;
 
-  transition: transform .2s;
+  transition: transform 0.2s;
 
   :hover {
     cursor: pointer;
-    
+
     transform: translateY(-0.35rem);
   }
 `;
@@ -32,13 +32,13 @@ export const ContentLeft = styled.div`
   width: 6.25rem;
   height: 6.25rem;
 
-  img{
+  img {
     width: 97%;
     height: auto;
 
     object-fit: contain;
   }
-`
+`;
 
 export const ContentRight = styled.div`
   flex: 1;
@@ -57,8 +57,7 @@ export const ContentRight = styled.div`
     letter-spacing: 0px;
     color: ${colors.black};
   }
-`
-
+`;
 
 export const IndicatorOpen = styled.span<IndicatorProps>`
   top: -1rem;
@@ -73,18 +72,17 @@ export const IndicatorOpen = styled.span<IndicatorProps>`
   align-items: center;
   justify-content: center;
   background: ${colors.purple800};
-  opacity: ${({isOpen}) => isOpen ? 1 : 0.5};
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0.5)};
 
-  @media(max-width: 767px) {
+  @media (max-width: 767px) {
     top: 1.5rem;
     right: 1rem;
   }
 
-  p{
+  p {
     text-align: center;
     font-size: 0.5rem;
     font-weight: bold;
     color: ${colors.white};
   }
 `;
-

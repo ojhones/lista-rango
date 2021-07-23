@@ -6,21 +6,20 @@ import natureImg from '../../../public/png/nature.png';
 import * as S from './styles';
 
 interface EstablishmentCardProps {
-  slug: String,
-  isOpen: boolean,
-  establishmentName?: string,
-  establishmentImage?: string,
-  establishmentAddress?: string,
+  slug: String;
+  isOpen: boolean;
+  establishmentName?: string;
+  establishmentImage?: string;
+  establishmentAddress?: string;
 }
 
-export function EstablishmentCard({ 
-    slug, 
-    isOpen,
-    establishmentName, 
-    establishmentImage,
-    establishmentAddress, 
-  }: EstablishmentCardProps) {
-
+export function EstablishmentCard({
+  slug,
+  isOpen,
+  establishmentName,
+  establishmentImage,
+  establishmentAddress,
+}: EstablishmentCardProps) {
   return (
     <Link href={`/Menu/${slug}`} passHref>
       <S.Container>
@@ -29,24 +28,15 @@ export function EstablishmentCard({
         </S.ContentLeft>
 
         <S.ContentRight>
-          <h3>
-            {establishmentName}
-          </h3>
+          <h3>{establishmentName}</h3>
 
-          <p>
-            {establishmentAddress}
-          </p>
+          <p>{establishmentAddress}</p>
         </S.ContentRight>
 
-
         <S.IndicatorOpen isOpen={isOpen}>
-          {isOpen ? (
-            <p>Aberto agora</p>
-          ) : (
-            <p>Fechado</p>
-          )}
+          {isOpen ? <p>Aberto agora</p> : <p>Fechado</p>}
         </S.IndicatorOpen>
-      </S.Container >
+      </S.Container>
     </Link>
-  )
+  );
 }

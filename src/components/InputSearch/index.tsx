@@ -11,5 +11,5 @@ export function InputSearch() {
         <FaSearch />
       </button>
     </S.Container>
-  )
+  );
 }

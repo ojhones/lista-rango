@@ -13,16 +13,16 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  input{
+  input {
     width: 90%;
     height: 100%;
     border: none;
     outline: none;
     padding-left: 1.1875rem;
-    border-radius: 16px 0 0  16px;
+    border-radius: 16px 0 0 16px;
   }
 
-  button{
+  button {
     width: 10%;
     height: 100%;
     border: none;
@@ -33,15 +33,14 @@ export const Container = styled.div`
 
     background: transparent;
 
-    svg{
+    svg {
       transition: 0.2s;
       color: ${colors.black};
     }
 
     :hover svg {
-        width: 1.25rem;
-        height: 1.25rem;
-      }
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 `;
-

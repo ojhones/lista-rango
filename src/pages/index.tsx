@@ -1,19 +1,13 @@
 import * as S from '../styles/pages/index';
 
-import { data } from '../components/EstablishmentCard/data'
+import { data } from '../components/EstablishmentCard/data';
 
-import {
-  SEO,
-  Header,
-  InputSearch,
-  EstablishmentCard,
-} from '../components';
+import { SEO, Header, InputSearch, EstablishmentCard } from '../components';
 
 export default function Home() {
   return (
     <S.Container>
-
-      <Header isLink/>
+      <Header isLink />
 
       <S.Wrapper>
         <SEO
@@ -31,13 +25,12 @@ export default function Home() {
               key={item.id}
               slug="restaurante"
               isOpen={item.isOpen}
-              establishmentName='Nome do Restaurante'
+              establishmentName="Nome do Restaurante"
               establishmentAddress="Endereço do restaurante"
             />
           ))}
         </S.WrapperContent>
-
       </S.Wrapper>
     </S.Container>
-  )
+  );
 }

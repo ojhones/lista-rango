@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import colors from "./colors";
+import colors from './colors';
 
 export default createGlobalStyle`
   * {
@@ -12,7 +12,7 @@ export default createGlobalStyle`
     transition: .2s;
     overflow-x: hidden;
   }
-  
+
   @media (max-width: 1080px) {
     html {
       font-size: 93.75%;

@@ -6,24 +6,19 @@ import {
   InputSearch,
   AccordionProducts,
   EstablishmentDetail,
-} from '../../components'
+} from '../../components';
 
 export default function Menu() {
   return (
     <S.Container>
-      
       <Header />
-     
-      <S.Wrapper>
 
-        <SEO 
-          title="Menu" 
-          description="Escolha escolha seu prato! :)"
-        />
+      <S.Wrapper>
+        <SEO title="Menu" description="Escolha escolha seu prato! :)" />
 
         <S.ContentTop>
-          <EstablishmentDetail 
-            establishmentName="Nome do Restaurante" 
+          <EstablishmentDetail
+            establishmentName="Nome do Restaurante"
             establishmentDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />
         </S.ContentTop>
@@ -35,8 +30,7 @@ export default function Menu() {
         </S.ContentLeft>
 
         <S.ContentRight />
-
       </S.Wrapper>
     </S.Container>
-  );     
+  );
 }

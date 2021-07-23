@@ -5,7 +5,7 @@ import colors from '../../styles/colors';
 export const Container = styled.header`
   width: 100vw;
   height: 3.6rem;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,9 +23,8 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
 
-
-  a{
-    svg{
+  a {
+    svg {
       color: ${colors.white};
     }
   }

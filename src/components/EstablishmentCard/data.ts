@@ -58,4 +58,4 @@ export const data = [
     id: 11,
     isOpen: true,
   },
-]
+];

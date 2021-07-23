@@ -10,7 +10,6 @@ export const Container = styled.main`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
 `;
 
 export const Wrapper = styled.div`
@@ -39,19 +38,19 @@ export const WrapperContent = styled.section`
   gap: 2.56rem 3rem;
   grid-template-columns: repeat(3, 1fr);
 
-  @media (max-width: 968px){
+  @media (max-width: 968px) {
     padding: 2.87rem 3.8125rem 0.5rem 3.8125rem;
   }
 
-  @media (max-width: 968px){
+  @media (max-width: 968px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 760px){
+  @media (max-width: 760px) {
     padding: 2.87rem 1.8125rem 0.5rem 1.8125rem;
   }
 
-  @media (max-width: 549px){
+  @media (max-width: 549px) {
     grid-template-columns: 1fr;
   }
 `;
