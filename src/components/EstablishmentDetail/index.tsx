@@ -5,8 +5,8 @@ import natureImg from '../../../public/png/nature.png';
 import * as S from "./styles"
 interface EstablishmentDetailProps {
   establishmentName: string,
-  establishmentImage?: string | any, 
   establishmentDescription: string,
+  establishmentImage?: string | any, 
 }
 
 export function EstablishmentDetail({

@@ -25,9 +25,7 @@ export function AccordionProducts() {
           </AccordionItemHeading>
           
           <AccordionItemPanel>
-            <p>
-              Comidinha boa!
-            </p>
+            <p>Comidinha boa!</p>
           </AccordionItemPanel>
         </AccordionItem>
 
@@ -39,9 +37,7 @@ export function AccordionProducts() {
           </AccordionItemHeading>
           
           <AccordionItemPanel>
-            <p>
-              Bebidinha boa!
-            </p>
+            <p>Bebidinha loca!</p>
           </AccordionItemPanel>
         </AccordionItem>
 
