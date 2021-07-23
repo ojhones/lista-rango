@@ -11,7 +11,6 @@ export const Container = styled.a`
 
   width: 100%;
   height: 6.25rem;
-  max-width: 22.9375rem;
   border-radius: 4px;
   box-shadow: 0px 2px 4px ${colors.gray300};
 
