@@ -27,5 +27,8 @@ export const Wrapper = styled.div`
     svg {
       color: ${colors.white};
     }
+    :hover {
+      cursor: pointer;
+    }
   }
 `;

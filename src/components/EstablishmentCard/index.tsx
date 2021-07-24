@@ -5,12 +5,25 @@ import natureImg from '../../../public/png/nature.png';
 
 import * as S from './styles';
 
+type AddressProps = {
+  city?: string;
+  state?: string;
+  number?: number;
+  street?: string;
+  country?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  postalCode?: string;
+  countryCode?: string;
+  neighborhood?: string;
+};
+
 interface EstablishmentCardProps {
   slug: string;
-  isOpen: boolean;
+  isOpen?: boolean;
   establishmentName?: string;
-  establishmentAddress?: string;
   establishmentImage?: string | any;
+  establishmentAddress: AddressProps[];
 }
 
 export function EstablishmentCard({
@@ -30,7 +43,16 @@ export function EstablishmentCard({
         <S.ContentRight>
           <h3>{establishmentName}</h3>
 
-          <p>{establishmentAddress}</p>
+          {establishmentAddress.map(localization => (
+            <p>
+              {`
+                ${localization.street},
+                ${localization.number},
+                ${localization.neighborhood},
+                ${localization.city}
+              `}
+            </p>
+          ))}
         </S.ContentRight>
 
         <S.IndicatorOpen isOpen={isOpen}>
