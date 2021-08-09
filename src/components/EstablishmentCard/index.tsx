@@ -3,14 +3,16 @@ import Image from 'next/image';
 
 import { Address } from '../../Interfaces/Restaurant';
 
+import defaultImage from '../../../public/png/nature.png';
+
 import * as S from './styles';
 
 interface EstablishmentCardProps {
   slug: string;
   isOpen?: boolean;
   establishmentName?: string;
-  establishmentImage: string;
-  establishmentAddress: Address[];
+  establishmentAddress?: Address[];
+  establishmentImage?: string | any;
 }
 
 export function EstablishmentCard({
@@ -25,10 +27,10 @@ export function EstablishmentCard({
       <S.Container>
         <S.ContentLeft>
           <Image
-            width="auto"
-            height="auto"
+            width={100}
+            height={100}
             alt="Image default"
-            src={establishmentImage}
+            src={establishmentImage || defaultImage}
           />
         </S.ContentLeft>
 

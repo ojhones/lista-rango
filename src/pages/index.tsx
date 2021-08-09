@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { GetStaticProps } from 'next';
 
 import { Restaurant } from '../Interfaces/Restaurant';
@@ -14,6 +15,18 @@ interface HomeProps {
 }
 
 export default function Home({ restaurants }: HomeProps) {
+  const [filter, setFilter] = useState(restaurants);
+
+  const search = '';
+
+  function handleSearch() {
+    const filterTeste = restaurants.filter(restaurant =>
+      restaurant.name.includes(search),
+    );
+    setFilter(filterTeste);
+    console.log('filter', filter);
+  }
+
   return (
     <S.Container>
       <Header isBack />
@@ -21,15 +34,15 @@ export default function Home({ restaurants }: HomeProps) {
       <S.Wrapper>
         <SEO
           title="Lista Rango"
-          description="Bem vindo à página inicial do lista Rango!"
+          description="Bem vindo à página inicial do lista Rango! #NascemosParaServir!"
         />
 
         <S.Title>Bem-vindo ao Lista Rango</S.Title>
 
-        <InputSearch />
+        <InputSearch onSearch={handleSearch} />
 
         <S.WrapperContent>
-          {restaurants.map(restaurant => (
+          {filter.map(restaurant => (
             <EstablishmentCard
               key={restaurant.id}
               slug={restaurant.slug}
@@ -63,6 +76,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       restaurants,
     },
-    revalidate: 60 * 60 * 14, // 14 hours
+    revalidate: 60 * 60 * 1, // 1 hours
   };
 };
