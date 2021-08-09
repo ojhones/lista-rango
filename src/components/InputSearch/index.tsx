@@ -5,7 +5,11 @@ import * as S from './styles';
 export function InputSearch() {
   return (
     <S.Container>
-      <input type="text" placeholder="Buscar estabelecimento" />
+      <input
+        type="text"
+        placeholder="Buscar estabelecimento"
+        onClick={() => console.log('Opa, você clicou!')}
+      />
 
       <button type="button">
         <FaSearch />

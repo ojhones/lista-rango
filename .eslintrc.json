@@ -23,6 +23,7 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
+    "no-console": "off",
     "no-case-declarations": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",

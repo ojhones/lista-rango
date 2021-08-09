@@ -1,29 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import natureImg from '../../../public/png/nature.png';
+import { Address } from '../../Interfaces/Restaurant';
 
 import * as S from './styles';
-
-type AddressProps = {
-  city?: string;
-  state?: string;
-  number?: number;
-  street?: string;
-  country?: string;
-  createdAt?: string;
-  updatedAt?: string;
-  postalCode?: string;
-  countryCode?: string;
-  neighborhood?: string;
-};
 
 interface EstablishmentCardProps {
   slug: string;
   isOpen?: boolean;
   establishmentName?: string;
-  establishmentImage?: string | any;
-  establishmentAddress: AddressProps[];
+  establishmentImage: string;
+  establishmentAddress: Address[];
 }
 
 export function EstablishmentCard({
@@ -34,10 +21,15 @@ export function EstablishmentCard({
   establishmentAddress,
 }: EstablishmentCardProps) {
   return (
-    <Link href={`/Menu/${slug}`} passHref>
+    <Link href={`/menu/${slug}`} passHref>
       <S.Container>
         <S.ContentLeft>
-          <Image src={establishmentImage || natureImg} alt="Image default" />
+          <Image
+            width="auto"
+            height="auto"
+            alt="Image default"
+            src={establishmentImage}
+          />
         </S.ContentLeft>
 
         <S.ContentRight>
@@ -56,7 +48,7 @@ export function EstablishmentCard({
         </S.ContentRight>
 
         <S.IndicatorOpen isOpen={isOpen}>
-          {isOpen ? <p>Aberto agora</p> : <p>Fechado</p>}
+          <p>Aberto agora</p>
         </S.IndicatorOpen>
       </S.Container>
     </Link>

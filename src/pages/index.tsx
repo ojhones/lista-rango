@@ -1,38 +1,16 @@
 import { GetStaticProps } from 'next';
 
-import { api } from '../services/api';
+import { Restaurant } from '../Interfaces/Restaurant';
 
+import { api } from '../services/api';
 import { createSlug } from '../utils/createSlug';
 
 import { SEO, Header, InputSearch, EstablishmentCard } from '../components';
 
 import * as S from '../styles/pages/index';
 
-type Address = {
-  city?: string;
-  state?: string;
-  number?: number;
-  street?: string;
-  country?: string;
-  createdAt?: string;
-  updatedAt?: string;
-  postalCode?: string;
-  countryCode?: string;
-  neighborhood?: string;
-};
-
-interface IRestaurants {
-  id: string;
-  name: string;
-  slug: string;
-  image: string;
-  imageUrl: string;
-  addresses: Address[];
-  workSchedules?: any;
-}
-
 interface HomeProps {
-  restaurants: IRestaurants[];
+  restaurants: Restaurant[];
 }
 
 export default function Home({ restaurants }: HomeProps) {
@@ -55,7 +33,6 @@ export default function Home({ restaurants }: HomeProps) {
             <EstablishmentCard
               key={restaurant.id}
               slug={restaurant.slug}
-              // isOpen={restaurant.isOpen}
               establishmentName={restaurant.name}
               establishmentAddress={restaurant.addresses}
               establishmentImage={restaurant.image || restaurant.imageUrl}
