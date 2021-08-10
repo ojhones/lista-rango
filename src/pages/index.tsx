@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 
-import { useSearch } from '../hooks/Search';
 import { Restaurant } from '../Interfaces/Restaurant';
 
 import { api } from '../services/api';
 import { createSlug } from '../utils/createSlug';
+
+import { useRestaurants } from '../hooks/restaurants';
 
 import { SEO, Header, InputSearch, EstablishmentCard } from '../components';
 
@@ -15,34 +16,29 @@ interface HomeProps {
   restaurants: Restaurant[];
 }
 
-export default function Home({ restaurants }: HomeProps) {
-  const { search } = useSearch();
-  const [filter, setFilter] = useState(restaurants);
+export default function Home({ restaurants: originalRestaurants }: HomeProps) {
+  const { setRestaurants, filteredRestaurants } = useRestaurants();
 
-  function handleSearch() {
-    const filterTeste = restaurants.filter(restaurant =>
-      restaurant.name.includes(search),
-    );
-    setFilter(filterTeste);
-    console.log('filter', filter);
-  }
+  useEffect(() => {
+    setRestaurants(originalRestaurants);
+  }, [setRestaurants]);
 
   return (
     <S.Container>
       <Header isBack />
 
-      <S.Wrapper>
-        <SEO
-          title="Lista Rango"
-          description="Bem vindo à página inicial do lista Rango! #NascemosParaServir!"
-        />
+      <SEO
+        title="Lista Rango"
+        description="Bem vindo à página inicial do lista Rango! #NascemosParaServir!"
+      />
 
+      <S.Wrapper>
         <S.Title>Bem-vindo ao Lista Rango</S.Title>
 
-        <InputSearch onSearch={handleSearch} />
+        <InputSearch />
 
         <S.WrapperContent>
-          {filter.map(restaurant => (
+          {filteredRestaurants.map(restaurant => (
             <EstablishmentCard
               key={restaurant.id}
               slug={restaurant.slug}

@@ -1,26 +1,28 @@
-import { FaSearch } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
-import { useSearch } from '../../hooks/Search';
+import { FaSearch } from 'react-icons/fa';
+import { useRestaurants } from '../../hooks/restaurants';
 
 import * as S from './styles';
 
-interface InputSearchProps {
-  onSearch: () => void;
-}
+export function InputSearch() {
+  const [searchValue, setSearchValue] = useState('');
+  const { searchRestaurants } = useRestaurants();
 
-export function InputSearch({ onSearch }: InputSearchProps) {
-  const { search, setSearch } = useSearch();
+  useEffect(() => {
+    searchRestaurants({ value: searchValue });
+  }, [searchValue]);
 
   return (
     <S.Container>
       <input
         type="text"
         placeholder="Buscar estabelecimento"
-        value={search}
-        onChange={e => setSearch(e.target.value)}
+        value={searchValue}
+        onChange={e => setSearchValue(e.target.value)}
       />
 
-      <button type="button" onClick={onSearch}>
+      <button type="button">
         <FaSearch />
       </button>
     </S.Container>

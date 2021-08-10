@@ -1,14 +1,14 @@
 import GlobalStyle from '../styles/GlobalStyle';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
-import { SearchProvider } from '../hooks/Search';
+import { AppProvider } from '../hooks/index';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <SearchProvider>
+    <AppProvider>
       <GlobalStyle />
       <Component {...pageProps} />
-    </SearchProvider>
+    </AppProvider>
   );
 }
 

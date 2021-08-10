@@ -7,7 +7,7 @@ import defaultImage from '../../../public/png/nature.png';
 
 import * as S from './styles';
 
-interface EstablishmentCardProps {
+export interface EstablishmentCardProps {
   slug: string;
   isOpen?: boolean;
   establishmentName?: string;
