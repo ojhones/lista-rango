@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { GetStaticProps } from 'next';
 
+import { useSearch } from '../hooks/Search';
 import { Restaurant } from '../Interfaces/Restaurant';
 
 import { api } from '../services/api';
@@ -15,9 +16,8 @@ interface HomeProps {
 }
 
 export default function Home({ restaurants }: HomeProps) {
+  const { search } = useSearch();
   const [filter, setFilter] = useState(restaurants);
-
-  const search = '';
 
   function handleSearch() {
     const filterTeste = restaurants.filter(restaurant =>
