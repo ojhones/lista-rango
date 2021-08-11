@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 
-import { Restaurant } from '../Interfaces/Restaurant';
-
 import { api } from '../services/api';
-import { createSlug } from '../utils/createSlug';
+
+import { Restaurant } from '../Interfaces/Restaurant';
 
 import { useRestaurants } from '../hooks/restaurants';
 
@@ -41,7 +40,7 @@ export default function Home({ restaurants: originalRestaurants }: HomeProps) {
           {filteredRestaurants.map(restaurant => (
             <EstablishmentCard
               key={restaurant.id}
-              slug={restaurant.slug}
+              id={restaurant.id}
               establishmentName={restaurant.name}
               establishmentAddress={restaurant.addresses}
               establishmentImage={restaurant.image || restaurant.imageUrl}
@@ -63,7 +62,6 @@ export const getStaticProps: GetStaticProps = async () => {
       image: restaurant.image,
       imageUrl: restaurant.imageUrl,
       addresses: restaurant.addresses,
-      slug: createSlug(restaurant.name),
       workSchedules: restaurant.workSchedules,
     };
   });

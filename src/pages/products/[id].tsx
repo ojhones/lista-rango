@@ -1,3 +1,5 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 import * as S from '../../styles/pages/menu';
 
 import {
@@ -8,7 +10,8 @@ import {
   EstablishmentDetail,
 } from '../../components';
 
-export default function Menu() {
+export default function Menu({ products }) {
+  console.log('products', products);
   return (
     <S.Container>
       <Header />
@@ -34,3 +37,33 @@ export default function Menu() {
     </S.Container>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: 'blocking',
+});
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    const { getProducts } = await import(
+      '../../services/functions/getProducts'
+    );
+
+    const products = await getProducts({
+      id: String(params.id),
+    });
+
+    return {
+      props: {
+        products,
+      },
+      revalidate: 60 * 60 * 24, // 24 hours
+    };
+  } catch (error) {
+    return {
+      props: {
+        products: null,
+      },
+    };
+  }
+};

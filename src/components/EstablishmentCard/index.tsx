@@ -8,7 +8,7 @@ import defaultImage from '../../../public/png/nature.png';
 import * as S from './styles';
 
 export interface EstablishmentCardProps {
-  slug: string;
+  id: string;
   isOpen?: boolean;
   establishmentName?: string;
   establishmentAddress?: Address[];
@@ -16,14 +16,14 @@ export interface EstablishmentCardProps {
 }
 
 export function EstablishmentCard({
-  slug,
+  id,
   isOpen,
   establishmentName,
   establishmentImage,
   establishmentAddress,
 }: EstablishmentCardProps) {
   return (
-    <Link href={`/menu/${slug}`} passHref>
+    <Link href={`/products/${id}`} passHref>
       <S.Container>
         <S.ContentLeft>
           <Image
