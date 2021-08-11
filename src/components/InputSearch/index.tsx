@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { FaSearch } from 'react-icons/fa';
-import { useRestaurants } from '../../hooks/restaurants';
+import { useRestaurants } from '~/hooks/restaurants';
 
 import * as S from './styles';
 

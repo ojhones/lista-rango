@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { RestaurantsProvider } from './restaurants';
+import { RestaurantsProvider } from '~/hooks/restaurants';
 
 interface AppProviderProps {
   children: ReactNode;

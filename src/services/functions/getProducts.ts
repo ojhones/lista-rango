@@ -1,6 +1,6 @@
-import { Products } from '../../Interfaces/Products';
+import { Products } from '~/interfaces/Products';
 
-import { api } from '../api';
+import { api } from '~/services/api';
 
 interface GetProductsProps {
   id: string;

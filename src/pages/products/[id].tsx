@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import * as S from '../../styles/pages/menu';
+import * as S from '~/styles/pages/menu';
 
 import {
   SEO,
@@ -8,7 +8,7 @@ import {
   InputSearch,
   AccordionProducts,
   EstablishmentDetail,
-} from '../../components';
+} from '~/components';
 
 export default function Menu({ products }) {
   console.log('products', products);
@@ -45,9 +45,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
-    const { getProducts } = await import(
-      '../../services/functions/getProducts'
-    );
+    const { getProducts } = await import('~/services/functions/getProducts');
 
     const products = await getProducts({
       id: String(params.id),

@@ -1,4 +1,4 @@
-import GlobalStyle from '../styles/GlobalStyle';
+import GlobalStyle from '~/styles/GlobalStyle';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 import { AppProvider } from '../hooks/index';

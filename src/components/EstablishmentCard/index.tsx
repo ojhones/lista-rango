@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Address } from '../../Interfaces/Restaurant';
+import { Address } from '~/interfaces/Restaurant';
 
 import defaultImage from '../../../public/png/nature.png';
 

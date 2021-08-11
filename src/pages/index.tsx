@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { GetStaticProps } from 'next';
 
-import { api } from '../services/api';
+import { api } from '~/services/api';
 
-import { Restaurant } from '../Interfaces/Restaurant';
+import { Restaurant } from '~/interfaces/Restaurant';
 
-import { useRestaurants } from '../hooks/restaurants';
+import { useRestaurants } from '~/hooks/restaurants';
 
-import { SEO, Header, InputSearch, EstablishmentCard } from '../components';
+import { SEO, Header, InputSearch, EstablishmentCard } from '~/components';
 
-import * as S from '../styles/pages/index';
+import * as S from '~/styles/pages/index';
 
 interface HomeProps {
   restaurants: Restaurant[];

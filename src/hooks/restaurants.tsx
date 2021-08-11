@@ -7,7 +7,7 @@ import {
   SetStateAction,
 } from 'react';
 
-import { Restaurant } from '../Interfaces/Restaurant';
+import { Restaurant } from '~/interfaces/Restaurant';
 
 interface SearchRestaurantsProps {
   value: string;
