@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from '../../styles/colors';
+import colors from '~/styles/colors';
 
 export const Container = styled.header`
   width: 100vw;
@@ -26,6 +26,9 @@ export const Wrapper = styled.div`
   a {
     svg {
       color: ${colors.white};
+    }
+    :hover {
+      cursor: pointer;
     }
   }
 `;

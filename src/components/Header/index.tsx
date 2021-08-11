@@ -5,16 +5,18 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 import * as S from './styles';
 
 interface HeaderProps {
-  isLink?: boolean;
+  goBack?: boolean;
 }
 
-export function Header({ isLink }: HeaderProps) {
+export function Header({ goBack }: HeaderProps) {
   return (
     <S.Container>
       <S.Wrapper>
-        {isLink ?? (
+        {goBack && (
           <Link href="/">
-            <AiOutlineArrowLeft size={25} color="#fff" />
+            <a>
+              <AiOutlineArrowLeft size={25} color="#fff" />
+            </a>
           </Link>
         )}
       </S.Wrapper>

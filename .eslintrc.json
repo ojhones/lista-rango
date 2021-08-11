@@ -23,9 +23,11 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
+    "no-console": "off",
     "no-case-declarations": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/no-unused-prop-types": "off",
     "camelcase": "off",

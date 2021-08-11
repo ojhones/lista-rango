@@ -55,6 +55,12 @@ export const ContentRight = styled.div`
     text-align: left;
     letter-spacing: 0px;
     color: ${colors.black};
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 `;
 

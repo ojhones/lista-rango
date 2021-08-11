@@ -3,24 +3,24 @@ import Head from 'next/head';
 
 interface SEOProps {
   title: string;
-  description: string;
-  canonical?: string;
-  amphtml?: string;
-  ogType?: 'website' | 'article';
   image?: string;
+  amphtml?: string;
   altImage?: string;
-  shouldExcludeTitleSuffix?: boolean;
+  canonical?: string;
+  description: string;
   shouldIndexPage?: boolean;
+  ogType?: 'website' | 'article';
+  shouldExcludeTitleSuffix?: boolean;
 }
 
 const SEO: FC<SEOProps> = ({
-  title,
-  description,
-  canonical,
-  amphtml,
-  ogType,
   image,
+  title,
+  ogType,
+  amphtml,
   altImage,
+  canonical,
+  description,
   shouldIndexPage = true,
 }) => {
   const pageImage = image || 'images/mao.jpg';

@@ -1,32 +1,47 @@
-import * as S from '../styles/pages/index';
+import { useEffect } from 'react';
+import { GetStaticProps } from 'next';
 
-import { data } from '../components/EstablishmentCard/data';
+import { api } from '~/services/api';
 
-import { SEO, Header, InputSearch, EstablishmentCard } from '../components';
+import { Restaurant } from '~/interfaces/Restaurant';
 
-export default function Home() {
+import { useRestaurants } from '~/hooks/restaurants';
+
+import { SEO, InputSearch, EstablishmentCard } from '~/components';
+
+import * as S from '~/styles/pages/index';
+
+interface HomeProps {
+  restaurants: Restaurant[];
+}
+
+export default function Home({ restaurants: originalRestaurants }: HomeProps) {
+  const { setRestaurants, filteredRestaurants } = useRestaurants();
+
+  useEffect(() => {
+    setRestaurants(originalRestaurants);
+  }, [setRestaurants]);
+
   return (
     <S.Container>
-      <Header isLink />
+      <SEO
+        title="Lista Rango"
+        description="Bem vindo à página inicial do lista Rango! #NascemosParaServir!"
+      />
 
       <S.Wrapper>
-        <SEO
-          title="Lista Rango"
-          description="Bem vindo à página inicial do lista Rango!"
-        />
-
         <S.Title>Bem-vindo ao Lista Rango</S.Title>
 
         <InputSearch />
 
         <S.WrapperContent>
-          {data.map(item => (
+          {filteredRestaurants.map(restaurant => (
             <EstablishmentCard
-              key={item.id}
-              slug="restaurante"
-              isOpen={item.isOpen}
-              establishmentName="Nome do Restaurante"
-              establishmentAddress="Endereço do restaurante"
+              key={restaurant.id}
+              id={restaurant.id}
+              establishmentName={restaurant.name}
+              establishmentAddress={restaurant.addresses}
+              establishmentImage={restaurant.image || restaurant.imageUrl}
             />
           ))}
         </S.WrapperContent>
@@ -34,3 +49,25 @@ export default function Home() {
     </S.Container>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await api.get('restaurants');
+
+  const restaurants = data.restaurants.map(restaurant => {
+    return {
+      id: restaurant.id,
+      name: restaurant.name,
+      image: restaurant.image,
+      imageUrl: restaurant.imageUrl,
+      addresses: restaurant.addresses,
+      workSchedules: restaurant.workSchedules,
+    };
+  });
+
+  return {
+    props: {
+      restaurants,
+    },
+    revalidate: 60 * 60 * 1, // 1 hours
+  };
+};

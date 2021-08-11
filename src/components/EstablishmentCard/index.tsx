@@ -1,40 +1,56 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import natureImg from '../../../public/png/nature.png';
+import { Address } from '~/interfaces/Restaurant';
+
+import defaultImage from '../../../public/png/nature.png';
 
 import * as S from './styles';
 
-interface EstablishmentCardProps {
-  slug: string;
-  isOpen: boolean;
+export interface EstablishmentCardProps {
+  id: string;
+  isOpen?: boolean;
   establishmentName?: string;
-  establishmentAddress?: string;
+  establishmentAddress?: Address[];
   establishmentImage?: string | any;
 }
 
 export function EstablishmentCard({
-  slug,
+  id,
   isOpen,
   establishmentName,
   establishmentImage,
   establishmentAddress,
 }: EstablishmentCardProps) {
   return (
-    <Link href={`/Menu/${slug}`} passHref>
+    <Link href={`/products/${id}`} passHref>
       <S.Container>
         <S.ContentLeft>
-          <Image src={establishmentImage || natureImg} alt="Image default" />
+          <Image
+            width={100}
+            height={100}
+            alt="Image default"
+            src={establishmentImage || defaultImage}
+          />
         </S.ContentLeft>
 
         <S.ContentRight>
           <h3>{establishmentName}</h3>
 
-          <p>{establishmentAddress}</p>
+          {establishmentAddress.map(localization => (
+            <p>
+              {`
+                ${localization.street},
+                ${localization.number},
+                ${localization.neighborhood},
+                ${localization.city}
+              `}
+            </p>
+          ))}
         </S.ContentRight>
 
         <S.IndicatorOpen isOpen={isOpen}>
-          {isOpen ? <p>Aberto agora</p> : <p>Fechado</p>}
+          <p>Aberto agora</p>
         </S.IndicatorOpen>
       </S.Container>
     </Link>
