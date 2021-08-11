@@ -27,7 +27,7 @@ export type Category = {
   name?: string;
 };
 
-export interface Products {
+export interface Product {
   id?: string;
   name?: string;
   price?: number;

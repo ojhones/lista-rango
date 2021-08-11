@@ -1,4 +1,4 @@
-import { Products } from '~/interfaces/Products';
+import { Product } from '~/interfaces/Products';
 
 import { api } from '~/services/api';
 
@@ -6,13 +6,15 @@ interface GetProductsProps {
   id: string;
 }
 
-export async function getProducts({ id }: GetProductsProps): Promise<Products> {
+export async function getProducts({
+  id,
+}: GetProductsProps): Promise<Product[]> {
   try {
     const {
       data: { products },
-    } = await api.get<{ products: Products }>(`/products/${id}`);
+    } = await api.get<{ products: Product[] }>(`/products/${id}`);
 
-    return JSON.parse(JSON.stringify(products));
+    return products;
   } catch (error) {
     throw new Error('Erro ao listar os Produtos');
   }

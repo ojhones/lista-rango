@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import { Product } from '~/interfaces/Products';
+
 import * as S from '~/styles/pages/menu';
 
 import {
@@ -9,7 +11,11 @@ import {
   EstablishmentDetail,
 } from '~/components';
 
-export default function Menu({ products }) {
+interface ProductsProps {
+  products: Product[];
+}
+
+export default function Products({ products }: ProductsProps) {
   console.log('products', products);
   return (
     <S.Container>
@@ -57,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   } catch (error) {
     return {
       props: {
-        products: null,
+        products: [],
       },
     };
   }
