@@ -7,7 +7,7 @@ import { Restaurant } from '~/interfaces/Restaurant';
 
 import { useRestaurants } from '~/hooks/restaurants';
 
-import { SEO, Header, InputSearch, EstablishmentCard } from '~/components';
+import { SEO, InputSearch, EstablishmentCard } from '~/components';
 
 import * as S from '~/styles/pages/index';
 
@@ -24,8 +24,6 @@ export default function Home({ restaurants: originalRestaurants }: HomeProps) {
 
   return (
     <S.Container>
-      <Header isBack />
-
       <SEO
         title="Lista Rango"
         description="Bem vindo à página inicial do lista Rango! #NascemosParaServir!"

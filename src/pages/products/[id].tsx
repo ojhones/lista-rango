@@ -4,7 +4,6 @@ import * as S from '~/styles/pages/menu';
 
 import {
   SEO,
-  Header,
   InputSearch,
   AccordionProducts,
   EstablishmentDetail,
@@ -14,8 +13,6 @@ export default function Menu({ products }) {
   console.log('products', products);
   return (
     <S.Container>
-      <Header />
-
       <S.Wrapper>
         <SEO title="Menu" description="Escolha escolha seu prato! :)" />
 
