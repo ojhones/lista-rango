@@ -11,12 +11,15 @@ import {
   EstablishmentDetail,
 } from '~/components';
 
+interface ProductsSeparatedByCategory {
+  [key: string]: Product[];
+}
+
 interface ProductsProps {
-  products: Product[];
+  products: ProductsSeparatedByCategory;
 }
 
 export default function Products({ products }: ProductsProps) {
-  console.log('products', products);
   return (
     <S.Container>
       <S.Wrapper>
@@ -32,7 +35,7 @@ export default function Products({ products }: ProductsProps) {
         <S.ContentLeft>
           <InputSearch />
 
-          <AccordionProducts />
+          <AccordionProducts products={products} />
         </S.ContentLeft>
 
         <S.ContentRight />
@@ -50,13 +53,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const { getProducts } = await import('~/services/functions/getProducts');
 
-    const products = await getProducts({
+    const productsData = await getProducts({
       id: String(params.id),
+    });
+
+    const productsSeparatedByCategory: ProductsSeparatedByCategory = {};
+
+    productsData.forEach(product => {
+      if (!productsSeparatedByCategory[product.category.name]) {
+        productsSeparatedByCategory[product.category.name] = [];
+      }
+
+      productsSeparatedByCategory[product.category.name].push(product);
     });
 
     return {
       props: {
-        products,
+        products: productsSeparatedByCategory,
       },
       revalidate: 60 * 60 * 24, // 24 hours
     };

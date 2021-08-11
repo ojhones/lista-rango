@@ -6,35 +6,46 @@ import {
   AccordionItemHeading,
 } from 'react-accessible-accordion';
 
+import { Product } from '~/interfaces/Products';
+
 import * as S from './styles';
 
-export function AccordionProducts() {
+interface ProductsSeparatedByCategory {
+  [key: string]: Product[];
+}
+
+interface ProductsProps {
+  products: ProductsSeparatedByCategory;
+}
+
+export function AccordionProducts({ products }: ProductsProps) {
+  const nameOfCategories = Object.keys(products);
+  const productsOfCategories = Object.values(products);
+
+  /*
+    ['Salgados', 'Doces']
+
+    [[{um produto completo}, {outro produto completo}], [{um produto completo}, {outro produto completo}]]
+  */
+
   return (
     <S.Container>
       <Accordion allowZeroExpanded allowMultipleExpanded>
-        <AccordionItem>
-          <AccordionItemHeading>
-            <AccordionItemButton>
-              <strong>Almoço</strong>
-            </AccordionItemButton>
-          </AccordionItemHeading>
+        {nameOfCategories.map((key, index) => (
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <strong>{key}</strong>
+              </AccordionItemButton>
+            </AccordionItemHeading>
 
-          <AccordionItemPanel>
-            <p>Comidinha boa!</p>
-          </AccordionItemPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <AccordionItemHeading>
-            <AccordionItemButton>
-              <strong>Bebidas</strong>
-            </AccordionItemButton>
-          </AccordionItemHeading>
-
-          <AccordionItemPanel>
-            <p>Bebidinha loca!</p>
-          </AccordionItemPanel>
-        </AccordionItem>
+            {productsOfCategories[index].map(product => (
+              <AccordionItemPanel>
+                <p>{product.name}</p>
+              </AccordionItemPanel>
+            ))}
+          </AccordionItem>
+        ))}
       </Accordion>
     </S.Container>
   );
